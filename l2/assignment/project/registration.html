@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        if (! window.localStorage.ITUser){
+            var Customers = {"alluser":[]};
+            uname.focus();
+        }
+        reg= p => {
+            if (window.localStorage.ITUser){
+                jUsers = window.localStorage.getItem("ITUser");
+                Customers =JSON.parse(jUsers);
+            }
+            Customers.alluser.push({"username":uname.value,"pwd":pwd.value});
+            console.log(Customers);
+            sUser = JSON.stringify(Customers);
+            window.localStorage.setItem("ITUser",sUser);
+            location.reload();
+        }
+    </script>
+    <table border="1">
+        <tr>
+            <td  colspan="2" align="center">Registration Page</td>
+        </tr>
+        <tr>
+            <td>Username:</td>
+            <td><input type="text" name="" id="uname"></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="text" name="" id="pwd"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><button onclick="reg()">Submit</button></td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table align="center">
+        <tr>
+            <td>Firstname:</td>
+            <td><input type="text" name="" id="uname"></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="text" name="" id="pwd"></td>
+        </tr>
+        <tr>
+            <td>Position:</td>
+            <td><input type="text" name="" id="position"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><button onclick="reg()">Submit</button></td>
+        </tr>
+    </table>
+    <table border="1" width="60%" align="center">
+        <tr>
+            <td>S/N</td>
+            <td>Firstname</td>
+            <td>Password</td>
+            <td>position</td>
+            <td>Delete</td>
+            <td>Update</td>
+        </tr>
+        <tbody id="l">
+    
+        </tbody>
+    </table>
+    <style>
+        button{
+            width: fit-content;
+        }
+    </style>
+<script>
+    var b = "";
+    if (window.localStorage.StUser) {
+        jUsers = window.localStorage.getItem("StUser");
+        Staff = JSON.parse(jUsers);
+        for (i=0; i<Staff.staffuser.length; i++){
+            b += "<tr><td>" + (i+1)+ "</td><td>"+ Staff.staffuser[i].firstname+ "</td><td>"+Staff.staffuser[i].pwd+"</td><td>"+Staff.staffuser[i].position+"</td><td><button onclick='remove()'>X</button></td><td><button onclick='update()'>i</button></td></tr>";
+        }
+        l.innerHTML = b;
+    }
+</script>
+
+    <script>
+         document.getElementById("uname").focus();
+        if (!window.localStorage.StUser){
+            var Staff = {"staffuser":[]};
+        }
+        reg= ()=> {
+            if (window.localStorage.StUser){
+                jUsers = window.localStorage.getItem("StUser");
+                Staff =JSON.parse(jUsers);
+            }
+            Staff.staffuser.push({"firstname":uname.value,"pwd":pwd.value,"position":position.value});
+            // console.log(Customers);
+            sUser = JSON.stringify(Staff);
+            window.localStorage.setItem("StUser",sUser);
+            location.reload();
+        }
+        remove =()=>{
+            oldList = JSON.parse(window.localStorage.getItem("StUser")).staffuser;
+            newList=oldList.pop(l);
+            window.localStorage.setItem("StUser", JSON.stringify({"staffuser": oldList}));
+            location.reload();
+        }
+
+    </script>
+</body>
+</html>

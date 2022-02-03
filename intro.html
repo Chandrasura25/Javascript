@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script text="text/javascript">
+        var hours = 0;
+        var minutes = 0;
+        var seconds = 0;
+     
+        function counter()
+        {
+            ct.disabled = "disabled";
+            hours = hh.value;
+            minutes = mm.value;
+            seconds = ss.value;
+
+            if (seconds == 0) {
+                minutes--;
+                seconds = 60;
+            } 
+          
+            seconds--;
+
+            //   seconds =seconds -1;
+            ss.value = seconds;
+            mm.value = minutes;
+
+            if(seconds > 0 || minutes > 0)
+            {
+                setTimeout("counter()", 100)
+            }
+            else
+            {
+                alert("TimeUP!!!")
+            }
+        }
+
+        
+    </script>
+    <center>
+        <table>
+            <tr>
+                <td align="center" colspan="3"> Countdown Timer</td>
+            </tr>
+            <tr>
+                <td>Hours</td>
+                <td>minutes</td>
+                <td>Second</td>
+            </tr>
+                <tr>
+                    <td><input type="text" name="" id="hh"> </td>
+                    <td><input id="mm" type="text" name=""></td>
+                    <td><input type="text" name="" id="ss"></td>
+                </tr>
+            <tr>
+                <td colspan= "3" align="center"><button id="ct" onclick="counter()">START COUNTING</button></td>
+         </tr>
+        </table>
+    </center>
+</body>
+</html>

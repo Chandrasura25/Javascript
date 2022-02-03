@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <form> -->
+   <b><p>Registration Form</p></b>
+    <div>
+        <label for="name">Fullname</label>
+        <input type="text" name="" id="fN" placeholder="Lastname Firstname"><br><br>
+        <label for="email">Email address</label>
+         <input type="email" name="" id="ema" placeholder="abcd@gmail.com"><br><br>
+         <label for="phone numer">Number</label>
+         <input type="number" name="" id="No"><br><br>
+         <label for="password">Password</label>
+         <input type="text" name=""placeholder="*******" id="pass"><br><br>
+         <label for="password">Re-enter Password</label>
+         <input type="text" name=""placeholder="*******" id="pass1"><br><br>
+         <button id="log" onclick="signUp()">Sign Up</button>
+         <button onclick="locate()">login</button>
+    </div>
+    <script>
+    if (! window.localStorage.ITUser){
+        var Customers = {"alluser":[]};
+        fN.focus();
+    }
+     signUp=()=> {
+        if (window.localStorage.ITUser){
+            jUsers = window.localStorage.getItem("ITUser");
+            Customers =JSON.parse(jUsers);
+        }
+        Customers.alluser.push({"fullname":fN.value,"email":ema.value, "number":No.value,"password":pass.value, "password1":pass1.value});
+        console.log(Customers);
+        sUser = JSON.stringify(Customers);
+        window.localStorage.setItem("ITUser",sUser);
+        location.reload();
+    }
+    locate=()=>{
+        location.replace("login.html");
+    }
+</script>
+     <!-- <Script>
+         if (! window.localStorage.documentation){
+             var documentation={"Document":[]} ;
+             fN.focus();
+         }
+      signUp = () => {
+          if (window.localStorage.documentation){
+            let people=  window.localStorage.getItem("documentation")
+              documentation=JSON.parse(people);
+          }
+         documentation.Document.push( {"fullname":fN.value,"email":ema.value, "number":No.value,"password":pass.value, "password1":pass1.value});
+        pJSON =JSON.stringify(documentation);
+        window.localStorage.setItem("documentation",pJSON );
+        location.reload()
+    } -->
+     <!-- alert("congratulation"+ " "+ person.fullname +" "+ "on your successful registration for your quest to the cinema.");
+    console.log(documentation); -->
+    </Script> 
+    <!-- </form> -->
+    <style>
+        body{
+            background: linear-gradient(lightblue,white);
+            border: 1px solid black;
+            height: 280px;
+            width: 330px;
+            margin: auto;
+            border-radius: 15px;
+            margin-top: 100px;
+        }
+        div{
+            padding-left: 10px;
+        }
+        p{
+            font-size: 20px;
+        }
+        #log{
+            margin-left: 200px;
+            background-color: cadetblue;
+        }
+        button:hover{
+            cursor: pointer;
+        }
+       
+    </style>
+</body>
+</html>

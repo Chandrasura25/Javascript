@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Table border="1" align="center">
+        <tr>
+     <td colspan="2"align="center">Simple Calculator</td>
+     
+        </tr>
+     <tr>
+            <td>input first value</td>
+            <td><input type="text" name="" id="fv"></td>
+      </tr>
+    <tr>
+                <td>input second value</td>
+                <td><input type="text" name="" id="sv"></td>
+    </tr>
+    <!-- local variable are variable declared within the scope , it is available within the scope declared
+    global variable are are available to all 
+    when a global variable share the same name with the local variable, the function of the global variable overides that of local variable. -->
+    <tr>
+        <td>Result</td>
+        <td><input type="text" name="" id="r"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><button onclick="ope('+')">+</button><button onclick="ope('-')">-</button><button onclick="ope('/')">/</button><button onclick="ope('X')">*</button></td>
+        
+           </tr>
+    </Table>
+    <button onclick="sec()">answer</button>
+    <script>
+    //  function plus(){
+    //      var sValue = sv.value;
+    //      var fValue = fv.value;
+    //      var result =0;
+    //       r.value=result;
+    //       result = parseFloat(fValue) + parseFloat(sValue);
+    //  }
+    function ope(o){
+        var sValue = parseFloat(sv.value);
+        var fValue = parseFloat(fv.value);
+        var result =0;
+        if (o=="-"){
+            result = fValue - sValue;
+        }
+        if (o=="+"){
+            result = fValue + sValue;
+        }
+        if (o=="/"){
+            result = fValue / sValue;
+        }
+        if (o=="X"){
+            result = fValue * sValue;
+        }
+        r.value=result;
+    }
+    function sec(){
+        var i =5;
+        var u =6;
+        var r =(i > u || u< 10)?  u++ : i--;
+        alert(r);
+    }
+    </script>
+
+</body>
+</html>

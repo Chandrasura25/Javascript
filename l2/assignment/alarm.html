@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: cornflowerblue;
+    }
+    table{
+            margin: 100px;
+        }
+   #countd{
+       font-size: 30px;
+   }  
+   #ct{
+            height: 50px;
+            border-radius: 10px;
+           background-image: url(/l2/assignment/clouds-5368435_1920.jpg);
+            color: rgb(66, 145, 145);
+        }
+</style>
+<body>
+    <script>
+        function counTer()
+        {
+            ct.disabled = "disabled";
+            hours = hh.value;
+            minutes = mm.value;
+            seconds = ss.value;
+
+            if (seconds > 0) {
+              ss.value--
+              setTimeout (counTer,1000)
+            } 
+           else if(mm.value>0&&ss.value==0){
+               ss.value =59;
+               mm.value--
+               setTimeout(counTer,1000)
+           }
+           if(hh.value>0 &&mm.value==0 && ss.value==0){
+               ss.value=59
+               mm.value--
+               hh.value--
+               setTimeout(counTer,1000)
+             }
+             if(hh.value==0 && mm.value==0 && ss.value==0){
+                var alarm = new Audio("alarm.mp3");
+                alarm.play();
+             }
+         }
+    </script>
+    <center>
+        <table>
+            <tr>
+                <td align="center" colspan="3" id="countd"> Countdown Timer</td>
+            </tr>
+        
+                <tr>
+                    <td><input type="text" name="" id="hh"> </td>
+                    <td><input id="mm" type="text" name=""></td>
+                    <td><input type="text" name="" id="ss"></td>
+                </tr>
+            <tr>
+                <td colspan= "3" align="center"><button id="ct" onclick="counTer()">START COUNTING</button></td>
+         </tr>
+        </table>
+    </center>
+</body>
+</html>

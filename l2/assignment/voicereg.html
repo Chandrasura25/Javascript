@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <script src="https://cdn.firebase.com/host/firebasejs/9.6.5/firebase-app.js"></script>
+    <script>
+        var recongnition = new webkitSpeechRecongnition();
+        recongnition.continuous =true;
+        var latestMessage =0;
+        var output = document.getElementById("output");
+        recongnition.onresult =function (event){
+            latestMessage =0;
+            writer.value = event.result[latestMessage][0].transcript;
+            if (event.result[0][0]) {
+             g.click();   
+            }
+            function go(){
+                alert ("i am going");
+            }
+        }
+    </script>
+    <div id="output"></div>
+    <button onclick="recongnition.start()">Start</button>
+    <button onclick="recongnition.stop()">Stop</button>
+    <button id="g" onclick="go()">Click go</button>
+    <textarea name="" id="writer" cols="30" rows="10"></textarea>
+</body>
+</html>

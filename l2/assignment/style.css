@@ -1,0 +1,15 @@
+.container{
+    border: 1px solid black;
+    height: 430px;
+    width: 270px;
+    background-color: rgb(230,230,230);
+}
+.screen{
+    height: 90px;
+    width: 262px;
+}
+button{
+    height: 50px;
+    width: 60px;
+   margin-left: 3px;
+}

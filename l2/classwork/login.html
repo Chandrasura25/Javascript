@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <div id="all">
+    <!-- <form action="converter1.html"> -->
+        <fieldset style=" border-radius: 20px;">
+        <legend style="font-size: 20px; color: cyan;">Login</legend>
+         <span><h3>login to your address</h3></span>
+         <label for="email">Email address</label><br>
+         <input type="email" name="" id="email" placeholder="abcd@gmail.com"  ><br>
+         <label for="password">Password</label><br>
+         <input type="text" name="" id="password" placeholder="********"><br>
+         <button onclick="checker()"id="login" type="submit">Login</button><br>
+         <label for="no account">Don't have an account yet?</label>
+         <input type="button" value="Create an account" onclick="regist()" style="background-color: lightblue; color: white;"><br>
+         <label for="for">Forgot your password?</label><br>
+         <span>Click <button style="background-color: lightblue;">here</button>to reset your password</span>
+        </fieldset>
+    <!-- </form> -->
+</div>
+<script>
+    function checker() {
+      lperson= window.localStorage.getItem("ITUser");
+        var person =JSON.parse(lperson); 
+        login =login.value;
+        password=password.value;
+        let Loge ={email:email.value,password:password.value}
+        if (login.email==lperson.email&&login.password==lperson.password) {
+            alert("welcome");
+        }
+        else{
+            alert("wrong password or username");
+        }
+        location.replace("cinema.html")
+    }
+    regist =()=>{
+        location.replace("registration.html")
+    }
+</script>
+    <style>
+  #body{
+    background-image: url(/l2/classwork/smoky.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#all {
+    margin: 130px 400px;
+}
+#login{
+    margin: 30px ;
+   background-color: lightblue;
+    border-radius: 20%;
+    margin-left: 125px;
+}
+#email{
+    width: 200px;
+    height: 15px;
+}
+#password{
+    width: 200px;
+    height: 15px;
+}
+    </style>
+</body>
+</html>

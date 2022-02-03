@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table align="ceenter">
+  <tr>
+      <td colspan="2" align="center">Converter</td>
+  </tr>
+  <tr>
+      <td colspan="2" align="center">
+          <select name="" id="">
+          <option value="Temperature">Temperature</option>
+          </select>
+      </td>
+  </tr>
+  <tr>
+      <td><input type="text" name="" onkeyup="convert()" placeholder="fahrenheit" id="first"></td>
+      <td><input type="text" name="" onkeyup="vert()" placeholder="celsius" id="cel"></td>
+  </tr>
+  <!-- <tr><td colspan="2" align="center" onclick="convert()"> <button>Convert</button></td></tr> -->
+    </table>
+   <script>
+      let  convert=() =>
+      {
+        var fValue = first.value;
+       
+        cel.value = (fValue-32)/1.8;
+       
+       }
+       function vert(){
+        var cValue= cel.value;
+        first.value=(cel.value+32)*1.8;
+       }
+   </script>
+   <!-- Temperature, volume,length,mass -->
+
+   <!-- <button onclick="greet()">greet me</button>
+   <script>
+       function greet(){
+        //    for (initialization,comparison,increment/decrement)
+        for (i=1;i<6;i++){
+          alert("good morning" + i)
+        }
+       }
+   </script> -->
+   <!-- var names =[ "sayi","ola"]
+   alert ("goodmorning" + names[1]) name.length
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+          <div>
+              <input type="text" name="" placeholder="value1" id="var1">
+              <input type="text" name="" placeholder="value2" id="var2">
+              <input type="text" name="" placeholder="Result" id="result">
+          </div>
+        <div id="arit">
+            <button onclick="addvalues()">+</button>
+            <button onclick="subtractvalues()">-</button>
+            <button onclick="dividevalues()">/</button>
+            <button onclick="multiplyvalues()">*</button>
+        </div> 
+    </center>
+    <script>
+     function addvalues() {
+         var firstvalue = Number( var1.value);
+          var secondvalue = Number(var2.value) ;
+          result.value = firstvalue  + secondvalue;
+        }
+        function subtractvalues() {
+            var firstvalue = Number( var1.value);
+            var secondvalue = Number( var2.value);
+            result.value = firstvalue  - secondvalue;
+        }
+        function dividevalues() {
+            var firstvalue = Number( var1.value);
+            var secondvalue = Number( var2.value);
+            result.value = firstvalue  / secondvalue;
+        }
+        function multiplyvalues() {
+            var firstvalue = Number( var1.value);
+            var secondvalue = Number( var2.value);
+            result.value = firstvalue  * secondvalue;
+        }
+        </script>
+    
+        <style>
+          div{
+              border: 1px solid black;
+              width: 703px;
+              height: 32px;
+          }
+            button{
+                height: 32px;
+                width: 120px;
+                margin: 25px;
+                margin-top: 1px;
+            }
+            button:hover{
+                cursor: all-scroll;
+            }
+            input{
+                height: 27px;
+                width: 200px;
+                
+            }
+        </style>
+</body>
+</html>

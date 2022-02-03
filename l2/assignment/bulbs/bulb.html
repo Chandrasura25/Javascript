@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body align ="center">
+    <!-- <div><img src="/l2/assignment/bulbs/bulboff.gif" alt="" id="bulboff" style="width: 250px; "></div>
+    <button onclick="butt(on)" id="on">ON</button>
+    <script>
+        function butt(){
+            var butt = document.getElementById("bulboff");
+            if (butt.src.match("/l2/assignment/bulbs/bulbon.gif")){
+                butt.src = "/l2/assignment/bulbs/bulboff.gif";
+                on.innerText = ("ON");
+            }
+            else{
+                butt.src ="/l2/assignment/bulbs/bulbon.gif";
+                on.innerText = ("OFF");
+            }
+        }
+        
+        // let a =1
+        //  document.getElementById("bulboff");
+        // function butt(){
+        //     if (a ==1){
+        //         butt.src ="/l2/assignment/bulbs/bulbon.gif";
+        //       a=0 ;
+        //       on.innerText = ("ON");
+        //     }
+        //     else{
+        //         butt.src="/l2/assignment/bulbs/bulboff.gif";
+        //         a =1;
+        //         on.innerText = ("OFF");
+        //     }
+        // }
+    </script> -->
+
+
+
+<img id="blb" src="/l2/assignment/bulbs/bulboff.gif" alt="" width="100px">
+<button id="btn" onclick="switchBtn()">ON</button>
+<!-- <script>
+    let a = 1;
+    function switchBtn(){
+        if (a == 1){
+            blb.src = "/l2/assignment/bulbs/bulbon.gif";
+            btn.innerText = "OFF";
+           a = 0;
+        }
+        else{
+            blb.src = "/l2/assignment/bulbs/bulboff.gif";
+            btn.innerText = "ON";
+            a = 1;
+        }
+    }
+</script> -->
+<script>
+    let a;
+    function switchBtn(){
+        if (a){
+            blb.src = "/l2/assignment/bulbs/bulboff.gif";
+            btn.innerText = "ON";
+            a = false;
+        }
+        else{
+            blb.src = "/l2/assignment/bulbs/bulbon.gif";
+            btn.innerText = "OFF";
+           a = true;
+        }
+    }
+</script>
+</body>
+</html>

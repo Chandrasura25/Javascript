@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            background-image: url(/l2/assignment/clouds-5368435_1920.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        table{
+            margin: 150px auto;
+        }
+       select{
+           width: 249px;
+       } 
+       #bbt{
+           width: 247px;
+       } 
+       input{
+        width: 240px;  
+       }
+    </style>
+    <table align="center" border="1" style="width: 50%;">
+    <tr>
+        <td colspan="2" align="center">Simple Converter</td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <select name="" id="nn" onclick="kk()">
+            <option value="1">Temperature</option>
+            <option value="2">Volume</option>
+            <option value="3">Length</option>
+            <option value="4">Mass</option>
+            <option value="5">Energy</option>
+        </select></td>
+    </tr>
+     <tr>
+         <td><select id="mm">
+             <option name="" value="1">Celsius</option>
+             <option name="" value="2">Kelvin</option>
+             <option name="" value="3" id="fah">fahrenheit</option>
+         </select>
+         <select id="bb" style="display: none;">
+            <option name="" id="" value="1">Millilitre</option>
+            <option name="" id="" value="2">Litre</option>
+            <option name="" id="" value="3">Cubic meters</option>
+            <option name="" id="" value="4">Cubic centimeters</option>
+        </select>
+        <select id="bbs" style="display: none;">
+            <option name="" id=""value="1">Millimeters</option>
+            <option name="" id=""value="2">Centimeters</option>
+            <option name="" id=""value="3">Meters</option>
+            <option name="" id=""value="4">Nanometers</option>
+        </select>
+        <select id="bbc" style="display: none;">
+            <option name="" id=""value="1">Grams</option>
+            <option name="" id=""value="2">Kilogram</option>
+            <option name="" id=""value="3">Ounces</option>
+            <option name="" id=""value="4">Pounds</option>
+        </select>
+        <select id="bbe" style="display: none;">
+            <option name="" id=""value="1">Joules</option>
+            <option name="" id=""value="2">Kilojoules</option>
+            <option name="" id=""value="3">Thermal Calories</option>
+            <option name="" id=""value="4">Food Calories</option>
+        </select>
+        </td>
+         <td>
+            <select id="bbt" >
+                <option name="" value="2">Kelvin</option>
+                <option name="" value="1">Celsius</option>
+                <option name="" value="3">fahrenheit</option>
+            </select>
+             <select id="bbn" style="display: none;">
+            <option name="" id="" value="1">Millilitre</option>
+            <option name="" id="" value="2">Litre</option>
+            <option name="" id="" value="3">Cubic meters</option>
+            <option name="" id="" value="4">Cubic centimeters</option>
+        </select>
+        <select id="bbh" style="display: none;">
+            <option name="" id="" value="3">Meters</option>
+            <option name="" id="" value="1" >Millimeters</option>
+            <option name="" id="" value="2">Centimeters</option>
+            <option name="" id="" value="4">Nanometers</option>
+        </select>
+        <select id="bbd" style="display: none;">
+            <option name="" id="" value="2">Kilogram</option>
+            <option name="" id="" value="1" >Grams</option>
+            <option name="" id="" value="4">Pounds</option>
+            <option name="" id="" value="3">Ounces</option>
+        </select>
+        <select id="bbf" style="display: none;">
+            <option name="" id="" value="4">Food Calories</option>
+            <option name="" id="" value="2">Kilojoules</option>
+            <option name="" id="" value="1" >Joules</option>
+            <option name="" id="" value="3">Thermal Calories</option>
+        </select>
+    </td>
+     </tr>
+     <tr>
+        <td><input type="text" name="" id="fv" onkeyup="first()"></td>
+        <td><input type="text" name="" id="sv" onkeyup="second()"></td>
+    </tr>
+    </table>
+    <script>
+       function kk() {
+        if (nn.value== 1) {
+                 mm.style.display = "block"
+                 bbt.style.display = "block"
+                 bb.style.display = "none"
+                 bbn.style.display = "none"
+                 bbs.style.display = "none"
+                 bbh.style.display = "none" 
+                 bbc.style.display = "none"
+                 bbd.style.display = "none" 
+                 bbe.style.display = "none"
+                 bbf.style.display = "none" 
+               }
+               else if  (nn.value== 2) {
+                 mm.style.display = "none"
+                 bbt.style.display = "none"
+                 bb.style.display = "block"
+                 bbn.style.display = "block"
+                 bbs.style.display = "none"
+                 bbh.style.display = "none" 
+                 bbc.style.display = "none"
+                 bbd.style.display = "none" 
+                 bbe.style.display = "none"
+                 bbf.style.display = "none" 
+               }
+             else if  (nn.value==3){
+                mm.style.display = "none"
+                 bbt.style.display = "none"
+                 bb.style.display = "none"
+                 bbn.style.display = "none"
+                 bbs.style.display = "block"
+                 bbh.style.display = "block" 
+                 bbc.style.display = "none"
+                 bbd.style.display = "none" 
+                 bbe.style.display = "none"
+                 bbf.style.display = "none"  
+             }
+             else if(nn.value==4){
+                mm.style.display = "none"
+                 bbt.style.display = "none"
+                 bb.style.display = "none"
+                 bbn.style.display = "none"
+                 bbs.style.display = "none"
+                 bbh.style.display = "none" 
+                 bbc.style.display = "block"
+                 bbd.style.display = "block" 
+                 bbe.style.display = "none"
+                 bbf.style.display = "none"    
+             }
+             else if(nn.value==5){
+                mm.style.display = "none"
+                 bbt.style.display = "none"
+                 bb.style.display = "none"
+                 bbn.style.display = "none"
+                 bbs.style.display = "none"
+                 bbh.style.display = "none" 
+                 bbc.style.display = "none"
+                 bbd.style.display = "none" 
+                 bbe.style.display = "block"
+                 bbf.style.display = "block"   
+             }
+       }
+       function first() {
+        var sValue = parseFloat(sv.value);
+        var fValue = parseFloat(fv.value);
+        if (nn.value==1&& mm.value==1 && bbt.value==2) {
+            sv.value = (fValue+273); 
+        }
+        else if(mm.value==1&& bbt.value==3){
+            sv.value =(fValue-32)/1.8;
+        }
+        else if(mm.value==1&& bbt.value==1){
+            sv.value=fv.value;
+        }
+        else if(mm.value==2&&bbt.value==1){
+            sv.value=fv.value-273;
+        }
+        else if(mm.value==2&& bbt.value==2){
+            sv.value=fv.value;
+        }
+        else if(mm.value==2&&bbt.value==3){
+            sv.value=((fv.value-273)*1.8) +32;
+        }
+        if (nn.value==1 && mm.value==3 && bbt.value==1){
+            sv.value =((fv.value-32)/1.8)+273;
+        }
+        else if(mm.value==3&& bbt.value==2){
+            sv.value=(fv.value+32)*1.8;
+        }
+        else if(mm.value==3&& bbt.value==3){
+            sv.value=fv.value;
+        }
+        if (nn.value == 2&&bb.value==1 && bbn.value==1){
+        sv.value=fv.value;
+      }
+    //     else if(bb.value==2 && bbn.value==2){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bb.value==3 && bbn.value==3){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bb.value==4 && bbn.value==4){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bb.value==1 && bbn.value==2){
+    //         sv.value=fv.value/1000;  
+    //     }
+    //     else if(bb.value==1 && bbn.value==3){
+    //         sv.value=fv.value/1000000;  
+    //     }
+    //     else if(bb.value==1 && bbn.value==4){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bb.value==2 && bbn.value==4){
+    //         sv.value=fv.value*1000;  
+    //     }
+    //     else if(bb.value==2 && bbn.value==1){
+    //         sv.value=fv.value*1000;  
+    //     }
+    //     else if(bb.value==2 && bbn.value==3){
+    //         sv.value=fv.value/1000;  
+    //     }
+    //     else if(bb.value==3 && bbn.value==1){
+    //         sv.value=fv.value*1000000;  
+    //     }
+    //     else if(bb.value==3 && bbn.value==2){
+    //         sv.value=fv.value*1000;  
+    //     }
+    //     else if(bb.value==3 && bbn.value==4){
+    //         sv.value=fv.value*1000000;  
+    //     }
+    //     else if(bb.value==4 && bbn.value==1){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bb.value==4 && bbn.value==2){
+    //         sv.value=fv.value/1000;  
+    //     }
+    //     else if(bb.value==4 && bbn.value==3){
+    //         sv.value=fv.value/1000000;  
+    //     }
+    //     else if(nn.value==3&&bbs.value==1 && bbh.value==1){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bbs.value==2 && bbh.value==2){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bbs.value==3 && bbh.value==3){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bbs.value==4 && bbh.value==4){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bbs.value==1 && bbh.value==2){
+    //         sv.value=fv.value/10;  
+    //     }
+    //     else if(bbs.value==1 && bbh.value==3){
+    //         sv.value=fv.value/1000;  
+    //     }
+    //     else if(bbs.value==1 && bbh.value==4){
+    //         sv.value=fv.value*1000000;  
+    //     }
+    //     else if(bbs.value==2 && bbh.value==1){
+    //         sv.value=fv.value*10;  
+    //     }
+    //     else if(bbs.value==2 && bbh.value==3){
+    //         sv.value=fv.value/100;  
+    //     }
+    //     else if(bbs.value==2 && bbh.value==4){
+    //         sv.value=fv.value*10000000;  
+    //     }
+    //     else if(bbs.value==3 && bbh.value==1){
+    //         sv.value=fv.value*1000;  
+    //     }
+    //     else if(bbs.value==3 && bbh.value==2){
+    //         sv.value=fv.value*100;  
+    //     }
+    //     else if(bbs.value==3 && bbh.value==4){
+    //         sv.value=fv.value*1000000000;  
+    //     }
+    //     else if(bbs.value==4 && bbh.value==1){
+    //         sv.value=fv.value/1000000;  
+    //     }
+    //     else if(bbs.value==4 && bbh.value==2){
+    //         sv.value=fv.value/10000000;  
+    //     }
+    //     else if(bbs.value==4 && bbh.value==3){
+    //         sv.value=fv.value/1000000000;  
+    //     }
+    //      if(nn.value==4&&bbc.value==1 && bbd.value==1){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bbc.value==2 && bbd.value==2){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bbc.value==1 && bbd.value==2){
+    //         sv.value=fv.value/1000;  
+    //     }
+    //      if(nn.value==4&&bbc.value==1 && bbd.value==3){
+    //         sv.value=fv.value/454;  
+    //     }
+    //     else if(bbc.value==1 && bbd.value==4){
+    //         sv.value=fv.value/28.35;  
+    //     }
+    //     else if(bbc.value==2 && bbd.value==1){
+    //         sv.value=fv.value*1000;  
+    //     }
+    //     else if(bbc.value==2 && bbd.value==3){
+    //         sv.value=fv.value*35.245;  
+    //     }
+    //     else if(bbc.value==2 && bbd.value==4){
+    //         sv.value=fv.value*2.205;  
+    //     }
+    //     else if(bbc.value==2 && bbd.value==2){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bbc.value==3 && bbd.value==1){
+    //         sv.value=fv.value*28.35;  
+    //     }
+    //     else if(bbc.value==3 && bbd.value==2){
+    //         sv.value=fv.value/35.274;  
+    //     }
+    //     else if(bbc.value==3 && bbd.value==4){
+    //         sv.value=fv.value/16;  
+    //     }
+    //     else if(bbc.value==3 && bbd.value==3){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bbc.value==4 && bbd.value==1){
+    //         sv.value=fv.value*454;  
+    //     }
+    //     else if(bbc.value==4 && bbd.value==2){
+    //         sv.value=fv.value/2.205;  
+    //     }
+    //     else if(bbc.value==4 && bbd.value==3){
+    //         sv.value=fv.value*16;  
+    //     }
+    //     else if(bbc.value==4 && bbd.value==4){
+    //         sv.value=fv.value;  
+    //     }
+    //     if (nn.value==5&&bbe.value==1&&bbf.value==1) {
+    //         sv.value=fv.value;
+    //     }
+    //     else if(bbe.value==1 && bbf.value==2){
+    //         sv.value=fv.value/1000;  
+    //     }
+    //     else if(bbe.value==1 && bbf.value==3){
+    //         sv.value=fv.value*0.2388;  
+    //     }
+    //     else if(bbe.value==1 && bbf.value==4){
+    //         sv.value=fv.value/4184;  
+    //     }
+    //     else if(bbe.value==2 && bbf.value==1){
+    //         sv.value=fv.value*1000;  
+    //     }
+    //     else if(bbe.value==2 && bbf.value==2){
+    //         sv.value=fv.value;  
+    //     }
+    //      if(bbe.value==2 && bbf.value==3){
+    //         sv.value=fv.value*239;  
+    //     }
+    //     else if(bbe.value==2 && bbf.value==4){
+    //         sv.value=fv.value/4.184;  
+    //     }
+    //     else if(bbe.value==3 && bbf.value==1){
+    //         sv.value=fv.value*4.184;  
+    //     }
+    //     else if(bbe.value==3 && bbf.value==2){
+    //         sv.value=fv.value*0.004184;  
+    //     }
+    //     else if(bbe.value==3 && bbf.value==3){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bbe.value==3 && bbf.value==4){
+    //         sv.value=fv.value/1000;  
+    //     }
+    //     else if(bbe.value==4 && bbf.value==1){
+    //         sv.value=fv.value*4184;  
+    //     }
+    //     else if(bbe.value==4 && bbf.value==2){
+    //         sv.value=fv.value*4.184;  
+    //     }
+    //     else if(bbe.value==4 && bbf.value==3){
+    //         sv.value=fv.value*1000;  
+    //     }
+    //     else if(bbe.value==4 && bbf.value==4){
+    //         sv.value=fv.value;  
+    //     }
+    //     var sValue = parseFloat(sv.value);
+    //     var fValue = parseFloat(fv.value);
+    //        if (nn.value==1 && mm.value==3 && bbt.value==1){
+    //         sv.value =(5/9*(fv.value-32));
+    //     }
+    //     else if(mm.value==3&& bbt.value==2){
+    //         sv.value=(fValue+255.372);
+    //     }
+    //     else if(mm.value==3&& bbt.value==3){
+    //         sv.value=fv.value;
+    //     }
+    //    }
+    //       function first() {
+    //     var sValue = parseFloat(sv.value);
+    //     var fValue = parseFloat(fv.value);
+    //     if (nn.value==1&& mm.value==1 && bbt.value==2) {
+    //         sv.value = (fValue+273); 
+    //     }
+    //     else if(mm.value==1&& bbt.value==3){
+    //         sv.value =(fValue-32)/1.8;
+    //     }
+    //     else if(mm.value==1&& bbt.value==1){
+    //         sv.value=fv.value;
+    //     }
+    //     else if(mm.value==2&&bbt.value==1){
+    //         sv.value=fv.value;
+    //     }
+    //     else if(mm.value==2&& bbt.value==2){
+    //         sv.value=fv.value;
+    //     }
+    //     else if(mm.value==2&&bbt.value==3){
+    //         sv.value=((fv.value-273)*1.8) +32;
+    //     }
+    //     // if (nn.value==1 && mm.value==3 && bbt.value==1){
+    //     //     sv.value =((fv.value-32)/1.8)+273;
+    //     // }
+    //     // else if(mm.value==3&& bbt.value==2){
+    //     //     sv.value=(fv.value+32)*1.8;
+    //     // }
+    //     // else if(mm.value==3&& bbt.value==3){
+    //     //     sv.value=fv.value;
+    //     // }
+    //     if (nn.value == 2&&bb.value==1 && bbn.value==1){
+    //         sv.value=fv.value;
+    //     }
+    //     else if(bb.value==2 && bbn.value==2){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bb.value==3 && bbn.value==3){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bb.value==4 && bbn.value==4){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bb.value==1 && bbn.value==2){
+    //         sv.value=fv.value/1000;  
+    //     }
+    //     else if(bb.value==1 && bbn.value==3){
+    //         sv.value=fv.value/1000000;  
+    //     }
+    //     else if(bb.value==1 && bbn.value==4){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bb.value==2 && bbn.value==4){
+    //         sv.value=fv.value*1000;  
+    //     }
+    //     else if(bb.value==2 && bbn.value==1){
+    //         sv.value=fv.value*1000;  
+    //     }
+    //     else if(bb.value==2 && bbn.value==3){
+    //         sv.value=fv.value/1000;  
+    //     }
+    //     else if(bb.value==3 && bbn.value==1){
+    //         sv.value=fv.value*1000000;  
+    //     }
+    //     else if(bb.value==3 && bbn.value==2){
+    //         sv.value=fv.value*1000;  
+    //     }
+    //     else if(bb.value==3 && bbn.value==4){
+    //         sv.value=fv.value*1000000;  
+    //     }
+    //     else if(bb.value==4 && bbn.value==1){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bb.value==4 && bbn.value==2){
+    //         sv.value=fv.value/1000;  
+    //     }
+    //     else if(bb.value==4 && bbn.value==3){
+    //         sv.value=fv.value/1000000;  
+    //     }
+    //     else if(nn.value==3&&bbs.value==1 && bbh.value==1){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bbs.value==2 && bbh.value==2){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bbs.value==3 && bbh.value==3){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bbs.value==4 && bbh.value==4){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bbs.value==1 && bbh.value==2){
+    //         sv.value=fv.value/10;  
+    //     }
+    //     else if(bbs.value==1 && bbh.value==3){
+    //         sv.value=fv.value/1000;  
+    //     }
+    //     else if(bbs.value==1 && bbh.value==4){
+    //         sv.value=fv.value*1000000;  
+    //     }
+    //     else if(bbs.value==2 && bbh.value==1){
+    //         sv.value=fv.value*10;  
+    //     }
+    //     else if(bbs.value==2 && bbh.value==3){
+    //         sv.value=fv.value/100;  
+    //     }
+    //     else if(bbs.value==2 && bbh.value==4){
+    //         sv.value=fv.value*10000000;  
+    //     }
+    //     else if(bbs.value==3 && bbh.value==1){
+    //         sv.value=fv.value*1000;  
+    //     }
+    //     else if(bbs.value==3 && bbh.value==2){
+    //         sv.value=fv.value*100;  
+    //     }
+    //     else if(bbs.value==3 && bbh.value==4){
+    //         sv.value=fv.value*1000000000;  
+    //     }
+    //     else if(bbs.value==4 && bbh.value==1){
+    //         sv.value=fv.value/1000000;  
+    //     }
+    //     else if(bbs.value==4 && bbh.value==2){
+    //         sv.value=fv.value/10000000;  
+    //     }
+    //     else if(bbs.value==4 && bbh.value==3){
+    //         sv.value=fv.value/1000000000;  
+    //     }
+    //      if(nn.value==4&&bbc.value==1 && bbd.value==1){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bbc.value==2 && bbd.value==2){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bbc.value==1 && bbd.value==2){
+    //         sv.value=fv.value/1000;  
+    //     }
+    //      if(nn.value==4&&bbc.value==1 && bbd.value==3){
+    //         sv.value=fv.value/454;  
+    //     }
+    //     else if(bbc.value==1 && bbd.value==4){
+    //         sv.value=fv.value/28.35;  
+    //     }
+    //     else if(bbc.value==2 && bbd.value==1){
+    //         sv.value=fv.value*1000;  
+    //     }
+    //     else if(bbc.value==2 && bbd.value==3){
+    //         sv.value=fv.value*35.245;  
+    //     }
+    //     else if(bbc.value==2 && bbd.value==4){
+    //         sv.value=fv.value*2.205;  
+    //     }
+    //     else if(bbc.value==2 && bbd.value==2){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bbc.value==3 && bbd.value==1){
+    //         sv.value=fv.value*28.35;  
+    //     }
+    //     else if(bbc.value==3 && bbd.value==2){
+    //         sv.value=fv.value/35.274;  
+    //     }
+    //     else if(bbc.value==3 && bbd.value==4){
+    //         sv.value=fv.value/16;  
+    //     }
+    //     else if(bbc.value==3 && bbd.value==3){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bbc.value==4 && bbd.value==1){
+    //         sv.value=fv.value*454;  
+    //     }
+    //     else if(bbc.value==4 && bbd.value==2){
+    //         sv.value=fv.value/2.205;  
+    //     }
+    //     else if(bbc.value==4 && bbd.value==3){
+    //         sv.value=fv.value*16;  
+    //     }
+    //     else if(bbc.value==4 && bbd.value==4){
+    //         sv.value=fv.value;  
+    //     }
+    //     if (nn.value==5&&bbe.value==1&&bbf.value==1) {
+    //         sv.value=fv.value;
+    //     }
+    //     else if(bbe.value==1 && bbf.value==2){
+    //         sv.value=fv.value/1000;  
+    //     }
+    //     else if(bbe.value==1 && bbf.value==3){
+    //         sv.value=fv.value*0.2388;  
+    //     }
+    //     else if(bbe.value==1 && bbf.value==4){
+    //         sv.value=fv.value/4184;  
+    //     }
+    //     else if(bbe.value==2 && bbf.value==1){
+    //         sv.value=fv.value*1000;  
+    //     }
+    //     else if(bbe.value==2 && bbf.value==2){
+    //         sv.value=fv.value;  
+    //     }
+    //      if(bbe.value==2 && bbf.value==3){
+    //         sv.value=fv.value*239;  
+    //     }
+    //     else if(bbe.value==2 && bbf.value==4){
+    //         sv.value=fv.value/4.184;  
+    //     }
+    //     else if(bbe.value==3 && bbf.value==1){
+    //         sv.value=fv.value*4.184;  
+    //     }
+    //     else if(bbe.value==3 && bbf.value==2){
+    //         sv.value=fv.value*0.004184;  
+    //     }
+    //     else if(bbe.value==3 && bbf.value==3){
+    //         sv.value=fv.value;  
+    //     }
+    //     else if(bbe.value==3 && bbf.value==4){
+    //         sv.value=fv.value/1000;  
+    //     }
+    //     else if(bbe.value==4 && bbf.value==1){
+    //         sv.value=fv.value*4184;  
+    //     }
+    //     else if(bbe.value==4 && bbf.value==2){
+    //         sv.value=fv.value*4.184;  
+    //     }
+    //     else if(bbe.value==4 && bbf.value==3){
+    //         sv.value=fv.value*1000;  
+    //     }
+    //     else if(bbe.value==4 && bbf.value==4){
+    //         sv.value=fv.value;  
+    //     }
+        var sValue = parseFloat(sv.value);
+        var fValue = parseFloat(fv.value);
+           if (nn.value==1 && mm.value==3 && bbt.value==1){
+            sv.value =(5/9*(fv.value-32));
+        }
+        else if(mm.value==3&& bbt.value==2){
+            sv.value=(fValue+255.372);
+        }
+        else if(mm.value==3&& bbt.value==3){
+            sv.value=fv.value;
+        }
+       }
+    </script>
+</body>
+</html>

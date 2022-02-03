@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table align="center">
+        <tr>
+            <td>Username:</td>
+            <td><input type="text" name="" id="uname"></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="text" name="" id="pwd"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><button onclick="reg()">Submit</button></td>
+        </tr>
+    </table>
+    <table border="1" width="60%" align="center">
+        <tr>
+            <td>S/N</td>
+            <td>Username</td>
+            <td>Password</td>
+            <td>Delete</td>
+            <td>Update</td>
+        </tr>
+        <tbody id="l">
+    
+        </tbody>
+    </table>
+<script>
+    var b = "";
+    if (window.localStorage.ITUser) {
+        jUsers = window.localStorage.getItem("ITUser");
+        Customers = JSON.parse(jUsers);
+        for (i=0; i<Customers.alluser.length; i++){
+            b += "<tr><td>" + (i+1)+ "</td><td>"+ Customers.alluser[i].username+ "</td><td>"+Customers.alluser[i].pwd+"</td></td><td><button onclick='remove()'>X</button></td><td><button onclick='update()'>i</button></td></tr>";
+        }
+        l.innerHTML = b;
+    }
+</script>
+
+    <script>
+         document.getElementById("uname").focus();
+        if (! window.localStorage.ITUser){
+            var Customers = {"alluser":[]};
+        }
+        reg= ()=> {
+            if (window.localStorage.ITUser){
+                jUsers = window.localStorage.getItem("ITUser");
+                Customers =JSON.parse(jUsers);
+            }
+            Customers.alluser.push({"username":uname.value,"pwd":pwd.value});
+            // console.log(Customers);
+            sUser = JSON.stringify(Customers);
+            window.localStorage.setItem("ITUser",sUser);
+            location.reload();
+        }
+        remove =()=>{
+            oldList = JSON.parse(window.localStorage.getItem("ITUser")).alluser;
+            newList=oldList.pop(l);
+            window.localStorage.setItem("ITUser", JSON.stringify({"alluser": oldList}));
+            location.reload();
+        }
+        // update=()=>{
+        //     oldList = JSON.parse(window.localStorage.getItem("ITUser")).alluser;
+        //     upDate = oldList
+        // }
+    </script>
+</body>
+</html>
