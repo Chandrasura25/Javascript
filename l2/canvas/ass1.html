@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <input type="text" name="" placeholder="lineToX" id="firstX">
+    <input type="text" name="" placeholder="lineToY" id="firstY"> <br>
+    <input type="text" name="" placeholder="moveToX" id="secX">
+    <input type="text" name="" placeholder="moveToY" id="secY"><br>
+    <button onclick="draw()">Create</button>
+    <canvas id="create" style="border: 2px solid rgb(172, 154, 154); height: 100%; width: 100%; background-color: rgb(197, 182, 161); margin-top: 40px;"></canvas>
+    <script>
+        draw=()=>{
+             mx = firstX.value;
+             my = firstY.value;
+             lx =secX.value;
+             ly =secY.value;
+            var demo =document.getElementById("create");
+            pen =demo.getContext("2d");
+            pen.moveTo(mx,my);
+            pen.lineTo(lx,ly);
+            pen.stroke()
+        }
+    </script>
+</body>
+</html>

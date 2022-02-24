@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <canvas id="try" style="border: 2px solid transparent; width: 800px; height: 500px; background-color: aliceblue;"></canvas>
+    <!-- <p></p> -->
+    <!-- <a id="download" download="splash-screen.png" href="" onclick="download_img(this)">Download to my page</a> -->
+    <!-- <button onclick="rotate()">rotate text</button> -->
+    <script>
+    //   window.onload =(function(){
+    //     var demo =document.getElementById("try");
+    //   var  pen =demo.getContext("2d");
+    //   var ox =demo.width;
+    //   var oy =demo.height;
+    //     var nextTime =0; 
+    //     var duration =1000;
+    //     var x=20;
+    //     requestAnimationFrame(animate);
+    //     function animate(currentTime){
+    //         if(currentTime<nextTime){
+    //             requestAnimationFrame(animate);
+    //             return;
+    //         }
+    //         nextTime =currentTime+duration;
+    //         pen.fillStyle='#'+Math.floor(Math.random()*16777215).toString(16);
+    //         pen.fillRect(x,30,30,30);
+    //         x+=30;
+    //         requestAnimationFrame(animate);
+    //     }
+    
+    //     })
+     // animation 2
+    //  window.onload =(function(){
+    //     var demo =document.getElementById("try");
+    //   var  pen =demo.getContext("2d");
+    //   var ox =demo.width/2;
+    //   var oy =demo.height/2;
+    //   var minX =20;
+    //   var maxX =250;
+    //   var x = minX;
+    //   var speedX =1;
+    //   var direction =1;
+    //   var y =20;
+    //   var Img = new Image();
+    //    Img.onload =start;
+    //    Img.src="OIP.jpg";
+    //    function start(){
+    //        requestAnimationFrame(animate);
+    //    }
+    //    function animate(time){
+    //    pen.clearRect(0,0,ox,oy);
+    //    pen.drawImage(Img,x,y);
+    //    x+= speedX*direction;
+    //    if (x<minX){x=minX; direction*= -1};
+    //    if(x>maxX){x=maxX; direction*= -1};
+    //    requestAnimationFrame(animate);
+    //    }
+    //  })
+
+
+        // animation frame
+      window.onload =(function (){
+     var demo =document.getElementById("try");
+      var  pen =demo.getContext("2d");
+      var ox =demo.width/2;
+      var oy =demo.height/2;
+      requestAnimationFrame(animate);
+      function animate(currentTime){
+        var x = Math.random()*demo.width;
+        var y = Math.random()*demo.height;
+        var radius = 10+Math.random()+15;
+        pen.beginPath();
+        pen.arc(x,y,radius,0,Math.PI*2);
+        pen.fillStyle='#'+Math.floor(Math.random()*16777215).toString(16);
+        pen.fill();
+        requestAnimationFrame(animate);
+      }
+});
+
+         // to download an image
+    //  var demo =document.getElementById("try");
+    //   var  pen =demo.getContext("2d");
+    //   var ox =demo.width/2;
+    //   var oy =demo.height/2;
+    //   pen.textAlign ="center";
+    //   pen.textBaseline="middle";
+    //   pen.fillStyle ="white";
+    //   pen.fillRect(ox/2,oy/2,ox,oy);
+    //   download_img =function(el){
+    //       var ImageUrl = demo.toDataURL("image/jpg");
+    //       el.href=ImageUrl;
+    //   }
+      //  to rotate a text using a button
+    //   var ox =demo.width/2;
+    //   var oy =demo.height/2;
+    //   pen.textAlign ="center";
+    //   pen.textBaseline="middle";
+    //   pen.strokeStyle= "#FF0000";
+    //   pen.font ="40px Arial";
+    //   pen.fillText("hello world",ox,oy);
+    //   rotate=function(){
+    //    pen.translate(ox,oy);
+    //    pen.rotate(Math.PI/180)*15;
+    //    pen.fillText("hello world",0,0);
+    //    pen.translate(-ox,-oy);
+    //   }
+      // to get the point in a canvas
+    //   demo.addEventListener("mousemove", function
+    //   (e){
+    //       var cRect =demo.getBoundingClientRect();
+    //       var penX =Math.round(e.clientX -cRect.left);
+    //       var penY = Math.round(e.clientY-cRect.top);
+    //       pen.clearRect(0,0,800,500);
+    //       pen.fillText("X: "+penX+", Y: "+penY,10,20);
+    //   }) 
+         //   1
+    //   pen.moveTo(150,0);
+    //   pen.lineTo(150,400);
+    //   pen.stroke();
+    //   pen.moveTo(0,75);
+    //   pen.lineTo(400,75);
+    //   pen.stroke()
+         //to rotate a text
+         
+    </script>
+
+</body>
+</html>

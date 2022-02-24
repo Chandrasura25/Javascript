@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <canvas id="try" style="border: 2px solid blue; width: 900px; height: 600px; background-color: aliceblue; margin:40px;"></canvas>
+    <a id="download" download="house.png" href="" onclick="download_img(this)">Download to my page</a>
+    <script>
+     
+     
+     var demo =document.getElementById("try");
+      var  pen =demo.getContext("2d");
+      //sun 
+      pen.strokeStyle= "yellow";
+      pen.fillStyle="yellow";
+      pen.beginPath();
+      pen.arc(220,20,20,0,2*Math.PI);
+       pen.stroke();
+      pen.fill();
+      //eyes
+      pen.strokeStyle= "orange";
+      pen.moveTo(208,12);
+      pen.lineTo(213,12);
+      pen.stroke()
+      pen.moveTo(226,12);
+      pen.lineTo(231,12);
+      pen.stroke()
+      //smile
+      pen.beginPath();
+      pen.arc(220,20,10,-0.03,1*Math.PI);
+      pen.stroke();
+      //house-building
+      pen.fillStyle = "brown";
+      pen.fillRect(80,47,105,110);
+      pen.stroke()
+      //door
+      pen.fillStyle = "grey";
+      pen.fillRect(120,110,27,40);
+      pen.stroke()
+      //roof
+      pen.beginPath();
+      pen.strokeStyle="grey";
+      pen.fillStyle = "grey";
+      pen.moveTo(75, 46);
+      pen.lineTo(190, 46);
+      pen.lineTo(132, 19);
+      pen.fill();
+      //window
+      pen.fillStyle = "white";
+      pen.fillRect(90,62,23,22);
+      pen.stroke()
+      pen.fillRect(150,62,23,22);
+      pen.stroke()
+     // sun rays
+    //  pen.strokeStyle="orange";
+      // pen.moveTo(200,60);
+      // pen.lineTo(210,43);
+      // pen.stroke()
+      // pen.moveTo(212,63);
+      // pen.lineTo(225,46);
+      // pen.stroke()
+      // pen.moveTo(245,21);
+      // pen.lineTo(261,32);
+      // pen.stroke()
+      // pen.moveTo(245,30);
+      // pen.lineTo(261,37);
+      // pen.stroke()
+      var ox =demo.width/2;
+      var oy =demo.height/2;
+      pen.textAlign ="center";
+      pen.textBaseline="middle";
+      pen.fillStyle ="transparent";
+      pen.fillRect(ox,oy,ox,oy);
+      download_img =function(el){
+        var ImageUrl = demo.toDataURL("image/jpg");
+        el.href=ImageUrl;
+      }
+    </script>
+
+</body>
+</html>

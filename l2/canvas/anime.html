@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" style="border: 2px solid azure;height: 600px; width: 900px; background-color: azure;margin-left: 10px;"> </canvas>
+    <button onclick="moveLine()">Start</button>
+    <script>
+    var cv = document.getElementById("canvas");
+   
+    var gsx = 10; gsy =0; gex =10; gxy = 600;
+    moveLine =()=>{
+       setInterval(clear =()=>{
+           pen.clearPath(0,0,900,600)
+       },400);
+       setInterval(
+           moveBy=()=>{
+
+           }
+       )
+        var pen = cv.getContext("2d");
+        gsx+= 10;
+        gsy =0;
+        gex +=10;
+        gxy=600;
+        pen .moveTo(gsk,gsy);
+        pen.lineTo(gex,gxy);
+        pen.stroke();
+    }
+   
+    </script>
+</body>
+</html>

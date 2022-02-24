@@ -5,9 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+  <link rel="stylesheet" href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">
 </head>
 <body> 
-    <script src="https://cdn.firebase.com/host/firebasejs/9.6.5/firebase-app.js"></script>
+    <div id="output"></div>
+    <button onclick="recongnition.start()">Start</button>
+    <button onclick="recongnition.stop()">Stop</button>
+    <button id="g" onclick="go()">Click go</button>
+    <textarea name="" id="writer" cols="30" rows="10"></textarea>
     <script>
         var recongnition = new webkitSpeechRecongnition();
         recongnition.continuous =true;
@@ -19,15 +24,10 @@
             if (event.result[0][0]) {
              g.click();   
             }
-            function go(){
+             go=()=>{
                 alert ("i am going");
             }
         }
     </script>
-    <div id="output"></div>
-    <button onclick="recongnition.start()">Start</button>
-    <button onclick="recongnition.stop()">Stop</button>
-    <button id="g" onclick="go()">Click go</button>
-    <textarea name="" id="writer" cols="30" rows="10"></textarea>
 </body>
 </html>

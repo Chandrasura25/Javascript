@@ -9,7 +9,7 @@
 <body>
     <table align="center">
         <tr>
-            <td>Firstname:</td>
+            <td>Username:</td>
             <td><input type="text" name="" id="uname"></td>
         </tr>
         <tr>
@@ -18,18 +18,19 @@
         </tr>
         <tr>
             <td>Position:</td>
-            <td><input type="text" name="" id="position"></td>
+            <td><input type="text" name="" id="post"></td>
         </tr>
         <tr>
-            <td colspan="2" align="center"><button onclick="reg()">Submit</button></td>
+            <td colspan="2" align="center"><button onclick="reg()" id="sub">Submit</button></td>
+            <td align="center" ><button id="demo" style="display: none;" onclick="edit()">Save</button></td>
         </tr>
-    </table>
-    <table border="1" width="60%" align="center">
+    </table> 
+     <table border="1" width="60%" align="center">
         <tr>
             <td>S/N</td>
-            <td>Firstname</td>
+            <td>Username</td>
             <td>Password</td>
-            <td>position</td>
+            <td>Position</td>
             <td>Delete</td>
             <td>Update</td>
         </tr>
@@ -37,46 +38,75 @@
     
         </tbody>
     </table>
-    <style>
-        button{
-            width: fit-content;
-        }
-    </style>
 <script>
     var b = "";
-    if (window.localStorage.StUser) {
-        jUsers = window.localStorage.getItem("StUser");
-        Staff = JSON.parse(jUsers);
-        for (i=0; i<Staff.staffuser.length; i++){
-            b += "<tr><td>" + (i+1)+ "</td><td>"+ Staff.staffuser[i].firstname+ "</td><td>"+Staff.staffuser[i].pwd+"</td><td>"+Staff.staffuser[i].position+"</td><td><button onclick='remove()'>X</button></td><td><button onclick='update()'>i</button></td></tr>";
+    if (window.localStorage.sTUser) {
+        jUsers = window.localStorage.getItem("sTUser");
+        Customers = JSON.parse(jUsers);
+        for (i=0; i<Customers.length; i++){
+            b += "<tr><td>" + (i+1)+ "</td><td>"+ Customers[i].name+"</td><td>"+Customers[i].pwd+"</td><td>"+Customers[i].post+"<td><button onclick='remove("+i+")'>X</button></td><td><button onclick='update("+i+")'>i</button></td></tr>";
         }
-        l.innerHTML = b;
+        document.getElementById("l").innerHTML=b;
     }
-</script>
-
-    <script>
-         document.getElementById("uname").focus();
-        if (!window.localStorage.StUser){
-            var Staff = {"staffuser":[]};
-        }
-        reg= ()=> {
-            if (window.localStorage.StUser){
-                jUsers = window.localStorage.getItem("StUser");
-                Staff =JSON.parse(jUsers);
+document.getElementById("uname").focus();
+if (! window.localStorage.sTUser){
+   var Customers = [];
+}
+reg= ()=> {
+   if (window.localStorage.sTUser){
+       jUsers = window.localStorage.getItem("sTUser");
+       Customers =JSON.parse(jUsers);
+   }
+  Customers.push({
+     "name":uname.value,
+     "pwd":pwd.value,
+     "post":post.value});
+  sUser = JSON.stringify(Customers);
+  window.localStorage.setItem("sTUser",sUser);
+  location.reload();
+}
+        remove = (i) =>{
+            oldList = JSON.parse(window.localStorage.getItem("sTUser"));
+            oldList.splice(i,1);
+            window.localStorage.setItem("sTUser", JSON.stringify(oldList));
+            location.reload();
             }
-            Staff.staffuser.push({"firstname":uname.value,"pwd":pwd.value,"position":position.value});
-            // console.log(Customers);
-            sUser = JSON.stringify(Staff);
-            window.localStorage.setItem("StUser",sUser);
-            location.reload();
+        update=(i)=>{
+        //     var customer =JSON.parse(window.localStorage.getItem("sTUser"));
+        //    demo.style.display ="block";
+        //     for (let i  = 0;  i<customer.length; i++) 
+        //     {
+        //         if (a == i) {
+        //             uname.value = customer[i].name;
+        //             pwd.value = customer[i].pwd;
+        //             post.value =customer[i].post;
+        //         }
+                
+        //     }
+            var customer =JSON.parse(window.localStorage.getItem("sTUser"));
+            demo.style.display ="block";
+            sub.style.display ="none";
+            // demo.innerHTML='<span onclick="editcustomer()">edit</span>';
+             uname.value = customer[i].name;
+             pwd.value = customer[i].pwd;
+             post.value =customer[i].post;
         }
-        remove =()=>{
-            oldList = JSON.parse(window.localStorage.getItem("StUser")).staffuser;
-            newList=oldList.pop(l);
-            window.localStorage.setItem("StUser", JSON.stringify({"staffuser": oldList}));
-            location.reload();
+        
+        edit =()=>{
+            let myIndex;
+                 customer =JSON.parse(window.localStorage.getItem("sTUser"));
+               for( let i =0; i < customer.length; i++){
+                   myIndex = i;
+              }
+              customer.splice(myIndex, 1,{
+                  "name":uname.value,
+                  "pwd":pwd.value,
+                  "post":post.value
+                  });
+              result = JSON.stringify(customer);
+              window.localStorage.setItem("sTUser",result);
+              location.reload()
         }
-
     </script>
 </body>
 </html>
