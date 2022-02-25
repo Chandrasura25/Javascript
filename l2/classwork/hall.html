@@ -70,7 +70,7 @@
             
               chairs = '<tr>';
               for(i=0; i<noOfChair; i++ ){
-                     chairs+= `<td><span style="color:peru;">No ${ i+1}</span ><img src="/Javascript2/l2/assignment/download (5).jfif" style="margin:10px;" onclick="say()" class="card"  alt=""></td>`;
+                     chairs+= `<td><span style="color:peru;display:block; text-align:center;">SEAT ${ i+1}</span ><img src="/Javascript2/l2/classwork/download__4_-removebg-preview.png" style="margin:10px; background-color:transparent; border:none;" class="card" onclick="say(${i})"  alt="" id="o"></td>`;
                      cArranged++;
                      if (cArranged== noPerRow){
                          chairs += '</tr><tr>';
@@ -80,11 +80,9 @@
               chairs += '</tr>'
               document.getElementById("hall").innerHTML=chairs;
           }
-        //   say =()=>{
-        //       for(i=0;i<noOfChair.length; i++){
-        //           alert(i)
-        //       }
-        //   }
+          say=(i) =>{
+                alert("seat no"+(i+1));
+          }
         </script>
       <input type="text" name="" id="tc" style="display: none;">
      <input type="text" name="" id="mr" style="display: none;"> 

@@ -19,7 +19,7 @@
     </style>
     <section>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <img src="../assignment/download (1).jfif" class="rounded" style="height: 30px;" alt="">
+            <img src="../classwork/download (1).jfif (1)" class="rounded" style="height: 30px;" alt="">
             <a class="navbar-brand mx-2 " href="#"  id="adm">Admin</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -27,12 +27,12 @@
               <div class="collapse navbar-collapse" id="collapsibleNavbar">
               <ul class="navbar nav">
               <!-- <li class="nav-item mx-2" ><a href="#"class="nav-link">Home</a></li> -->
-              <li class="nav-item mx-4"style="margin-left:20px;" ><a href="../assignment/assignment/cinema2.html" class="nav-link text-secondary">Cinema</a></li>
-              <li class="nav-item mx-4"><a href="hall.html" class="nav-link text-secondary">Hall</a></li>
-              <li class="nav-item mx-4"><a href="book a seat.html"class="nav-link text-secondary">Booking a seat</a></li>
-            
-              <li class="nav-item mx-4"><a href=""class="nav-link text-secondary">Staff Page</a></li>
-              <li class="nav-item mx-4"><a href=""class="nav-link text-secondary">Customer Page</a></li>
+              <li class="nav-item mx-2"style="margin-left:20px;" ><a href="../assignment/assignment/cinema2.html" class="nav-link text-secondary">Cinema</a></li>
+              <li class="nav-item mx-3"><a href="hall.html" class="nav-link text-secondary">Hall</a></li>
+              <li class="nav-item mx-2"><a href="book a seat.html"class="nav-link text-secondary">Booking a seat</a></li>
+              <li class="nav-item mx-3"><a href=""class="nav-link text-secondary">Staff Page</a></li>
+              <li class="nav-item mx-3"><a href=""class="nav-link text-secondary">Customer Page</a></li>
+              <li class="nav-item"><a href="#"class="nav-link text-secondary"><input  name="" type="search" id="search" placeholder="Search" class="form-control"></a></li>
             </ul>
               </div>
         </nav>
@@ -51,7 +51,7 @@
         <p id="admno" style="margin-top:-84px; margin-left:80px"></p></span>
         <span class="m-2 mx-4 card" style="height: 160px; background-color:beige; width:170px;">Staffs  <i class="bi-person-workspace" style="margin: 50px;"></i>
             <p id="stfno" style="margin-top:-96px; margin-left:83px"></p></span></span>
-           <span class="m-2 mx-4 card" style="height: 160px; background-color: beige; width:170px" >Customers   <i class="bi-person-fill" style="margin: 50px;"></i>
+           <span class="m-2 mx-4 card" style="height: 160px; background-color: beige; width:170px" >Customers<i class="bi-person-fill" style="margin: 50px;"></i>
         <p id="cus" style="margin-top:-94px; margin-left:80px"></p></span>
        </div>
     </div>
@@ -76,6 +76,7 @@
                     <td>S/N</td>
                     <td>Username</td>
                     <td>Password</td>
+                    <!-- <td>Seat Amount</td> -->
                     <td>Delete</td>
                     <td>Update</td>
                 </thead>
@@ -102,11 +103,13 @@
         </div>
     <script>
         var b = "";
+        var    editedId
         if (window.localStorage.ITUser) {
             jUsers = JSON.parse(window.localStorage.getItem("ITUser"));
+            Seat = JSON.parse(window.localStorage.getItem("Seat"));
             Customers = jUsers;
             for (i=0; i<Customers.length; i++){
-                b += "<tr><td>" + (i+1)+ "</td><td>"+ Customers[i].fullname+ "</td><td>"+Customers[i].password+"</td></td><td><button onclick='remove("+i+")' class='btn'>X</button></td><td><button class='btn btn-secondary' id='upd' onclick='update("+i+")'>i</button></td></tr>";
+                b += "<tr><td>" + (i+1)+ "</td><td>"+ Customers[i].fullname+ "</td><td>"+Customers[i].password+"</td><td><button onclick='remove("+i+")' class='btn'>X</button></td><td><button class='btn btn-secondary' id='upd' onclick='update("+i+")'>i</button></td></tr>";
             }
             l.innerHTML = b;
             cus.innerHTML=i
@@ -130,7 +133,8 @@
         Customers = JSON.parse(jUsers);
         stfno.innerHTML= Customers.length;
 
-        update=(i)=>{
+        update=(i)=>{     
+            editedId = i  
             var customer =JSON.parse(window.localStorage.getItem("ITUser"));
             edittable.style.display ="block";
             demo.style.display ="block";
@@ -139,21 +143,27 @@
             uname.value = customer[i].fullname;
             pwd.value = customer[i].password;
         }
-        edit =()=>{
+        edit =()=>{     
             side.style.display ="block";
             edittable.style.display ="block";
             let myIndex;
                  customer =JSON.parse(window.localStorage.getItem("ITUser"));
-               for( let i =0; i < customer.length; i++){
-                   myIndex = i;
-              }
-              customer.splice(myIndex, 1,{
+                customer.splice(editedId, 1,{ 
                   "fullname":uname.value,
                   "password":pwd.value,
                   });
               result = JSON.stringify(customer);
               window.localStorage.setItem("ITUser",result);
-              location.reload()
+              location.reload()     
+
+            //    for( let i =0; i < customer.length; i++){
+            //        if (uname.value == customer[i].fullname && pwd.value == customer[i].password) {
+                       
+            //            myIndex = i;
+            //        }
+            //   }
+            //   console.log(uname.value == customer[i].fullname && pwd.value == customer[i].password);
+            //   console.log(myIndex);
         }
 
 
@@ -164,7 +174,17 @@ send=()=>{
     }
     RegCus.push(ch);
     datas = window.localStorage.Reg =JSON.stringify(ch);
+    alert("sent");
+    location.reload();
 }
+$(document).ready(function(){
+    $("#search").on("keyup", function () {
+        var value =$(this).val().toLowerCase();
+        $ ("#l tr").filter(function(){
+            $(this).toggle($(this).text().toLowerCase().indexOf(value)>-1)
+        });
+    });
+});
     </script>
 
 

@@ -22,7 +22,7 @@
          <label for="password" class="form-label text-light">Re-enter Password</label>
          <input type="password" class="form-control"placeholder="*******" id="pass1"><br>
          <button id="log"class="btn btn-info" onclick="signUp()">Sign Up</button>
-         <button class="btn btn-secondary" onclick="locate()">login</button>
+         <button class="btn btn-secondary" onclick="locate()">Book a Seat</button>
     </div>
     <script>
     if (! window.localStorage.ITUser){
@@ -44,7 +44,13 @@
         }
     }
     locate=()=>{
-        location.replace("login.html");
+        if (confirm("Did you register?")){
+
+        location.replace("book a seat.html");
+        }
+        else{
+            fN.focus()
+        }
     }
 </script> 
     <!-- </form> -->
